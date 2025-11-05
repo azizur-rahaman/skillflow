@@ -648,3 +648,77 @@
   animation: gentle-pulse 3s ease-in-out infinite;
 }
 
+/* Growth Rings Animations */
+@keyframes ring-expand {
+  from {
+    r: 0;
+    opacity: 0;
+  }
+  to {
+    r: var(--ring-radius);
+    opacity: var(--ring-opacity);
+  }
+}
+
+@keyframes ring-pulse {
+  0%, 100% {
+    r: var(--ring-radius);
+    opacity: var(--ring-opacity);
+  }
+  50% {
+    r: calc(var(--ring-radius) * 1.05);
+    opacity: calc(var(--ring-opacity) * 1.2);
+  }
+}
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes domain-fade {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes ring-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-ring-expand {
+  animation: ring-expand 0.8s ease-out forwards;
+}
+
+.animate-ring-pulse {
+  animation: ring-pulse 2s ease-in-out infinite;
+}
+
+.animate-tooltip-appear {
+  animation: tooltip-appear 0.2s ease-out forwards;
+}
+
+.animate-domain-fade {
+  animation: domain-fade 0.4s ease-out forwards;
+}
+
+.animate-ring-rotate {
+  animation: ring-rotate 20s linear infinite;
+}
+
