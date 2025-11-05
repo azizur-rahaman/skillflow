@@ -1,10 +1,6 @@
-import LoginForm from '@/features/auth/presentation/components/LoginForm';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Sign In | SkillFlow',
-  description: 'Sign in to your SkillFlow account - The Predictive Talent OS',
-};
+import LoginForm from '@/features/auth/presentation/components/LoginForm';
 
 export default function LoginPage() {
   return (
