@@ -352,3 +352,157 @@
   animation: save-pulse 1.5s ease-out;
 }
 
+/* Experience Timeline Animations */
+@keyframes timeline-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes fab-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes skill-badge-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-timeline-slide {
+  animation: timeline-slide 0.5s ease-out forwards;
+}
+
+.animate-modal-fade {
+  animation: modal-fade 0.3s ease-out forwards;
+}
+
+.animate-fab-ripple {
+  animation: fab-ripple 0.6s ease-out forwards;
+}
+
+.animate-skill-badge-pulse {
+  animation: skill-badge-pulse 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Skill Extraction Animations */
+@keyframes skill-card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes confidence-fill {
+  from {
+    stroke-dashoffset: 283;
+  }
+  to {
+    stroke-dashoffset: var(--offset, 0);
+  }
+}
+
+@keyframes badge-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes skill-remove {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-2deg);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.animate-skill-card-appear {
+  animation: skill-card-appear 0.4s ease-out forwards;
+}
+
+.animate-confidence-fill {
+  animation: confidence-fill 1s ease-out forwards;
+}
+
+.animate-badge-shimmer {
+  background-size: 200% auto;
+  animation: badge-shimmer 3s linear infinite;
+}
+
+.animate-skill-remove {
+  animation: skill-remove 0.3s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
