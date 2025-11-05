@@ -182,28 +182,6 @@ export default function LoginPage() {
           </p>
         </div>
       </div>
-
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes particle-float {
-          0%, 100% {
-            transform: translate(0, 0);
-          }
-          25% {
-            transform: translate(10px, -10px);
-          }
-          50% {
-            transform: translate(-5px, -20px);
-          }
-          75% {
-            transform: translate(-15px, -10px);
-          }
-        }
-
-        .particle-float {
-          animation: particle-float infinite ease-in-out;
-        }
-      `}</style>
     </div>
   );
 }
