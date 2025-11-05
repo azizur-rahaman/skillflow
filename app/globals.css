@@ -506,3 +506,64 @@
   animation: slide-up 0.3s ease-out forwards;
 }
 
+/* Skill DNA Animations */
+@keyframes dna-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes radar-draw {
+  from {
+    stroke-dashoffset: 1000;
+    fill-opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+@keyframes insight-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+  }
+}
+
+@keyframes zone-fade {
+  from {
+    opacity: 0;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+  to {
+    opacity: 1;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-dna-glow {
+  animation: dna-glow 2s ease-in-out infinite;
+}
+
+.animate-radar-draw {
+  animation: radar-draw 1.5s ease-out forwards;
+}
+
+.animate-insight-pulse {
+  animation: insight-pulse 2s ease-in-out infinite;
+}
+
+.animate-zone-fade {
+  animation: zone-fade 0.6s ease-out forwards;
+}
+
