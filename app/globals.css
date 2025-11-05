@@ -843,3 +843,64 @@
   animation: panel-slide 0.3s ease-out forwards;
 }
 
+/* Skill Detail Animations */
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tab-switch {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes carousel-slide {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes endorsement-float {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-reveal {
+  animation: hero-reveal 0.6s ease-out forwards;
+}
+
+.animate-tab-switch {
+  animation: tab-switch 0.3s ease-out forwards;
+}
+
+.animate-carousel-slide {
+  animation: carousel-slide 0.4s ease-out forwards;
+}
+
+.animate-endorsement-float {
+  animation: endorsement-float 0.5s ease-out forwards;
+}
+
