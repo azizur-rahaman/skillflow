@@ -29,30 +29,30 @@ export const TeamLeaderboard: React.FC<TeamLeaderboardProps> = ({ teams, limit }
    * Get rank background color
    */
   const getRankBackground = (rank: number): string => {
-    if (rank === 1) return 'bg-gradient-to-br from-amber-500/20 to-amber-600/10 border-amber-500/30';
-    if (rank === 2) return 'bg-gradient-to-br from-slate-400/20 to-slate-500/10 border-slate-400/30';
-    if (rank === 3) return 'bg-gradient-to-br from-orange-600/20 to-orange-700/10 border-orange-600/30';
-    return 'bg-white dark:bg-slate-900/50 border-slate-200 dark:border-slate-800/50';
+    if (rank === 1) return 'bg-gradient-to-br from-warning/20 to-warning/10 border-warning/30';
+    if (rank === 2) return 'bg-gradient-to-br from-muted/40 to-muted/20 border-muted/50';
+    if (rank === 3) return 'bg-gradient-to-br from-warning/15 to-warning/5 border-warning/20';
+    return 'bg-card border-border';
   };
 
   /**
    * Get growth indicator color
    */
   const getGrowthColor = (rate: number): string => {
-    if (rate >= 15) return 'text-emerald-400';
-    if (rate >= 10) return 'text-cyan-400';
-    return 'text-slate-400';
+    if (rate >= 15) return 'text-success';
+    if (rate >= 10) return 'text-highlight';
+    return 'text-muted-foreground';
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-800/50 p-6">
+    <div className="bg-card backdrop-blur-sm rounded-2xl border border-border p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-          <Trophy className="w-5 h-5 text-amber-500" />
+        <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+          <Trophy className="w-5 h-5 text-warning" />
           Team Leaderboard
         </h3>
-        <span className="text-sm text-slate-500 dark:text-slate-400">
+        <span className="text-sm text-muted-foreground">
           Top {displayTeams.length} Teams
         </span>
       </div>
@@ -69,7 +69,7 @@ export const TeamLeaderboard: React.FC<TeamLeaderboardProps> = ({ teams, limit }
               className={`relative rounded-xl border ${rankBg} p-4 hover:shadow-lg transition-all duration-300 group`}
             >
               {/* Rank badge - absolute positioned */}
-              <div className="absolute -left-2 -top-2 w-10 h-10 rounded-full bg-slate-900 dark:bg-slate-800 border-2 border-white dark:border-slate-900 flex items-center justify-center shadow-lg">
+              <div className="absolute -left-2 -top-2 w-10 h-10 rounded-full bg-background border-2 border-card flex items-center justify-center shadow-lg">
                 {team.badge ? (
                   <span className="text-xl">{team.badge}</span>
                 ) : (
@@ -82,10 +82,10 @@ export const TeamLeaderboard: React.FC<TeamLeaderboardProps> = ({ teams, limit }
                 {/* Team header */}
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h4 className="text-base font-semibold text-slate-900 dark:text-white mb-1 flex items-center gap-2">
+                    <h4 className="text-base font-semibold text-foreground mb-1 flex items-center gap-2">
                       {team.teamName}
                       {team.rank <= 3 && (
-                        <Award className="w-4 h-4 text-amber-500" />
+                        <Award className="w-4 h-4 text-warning" />
                       )}
                     </h4>
                     <div className="flex items-center gap-2">
@@ -93,13 +93,13 @@ export const TeamLeaderboard: React.FC<TeamLeaderboardProps> = ({ teams, limit }
                         className="w-2 h-2 rounded-full"
                         style={{ backgroundColor: deptColor }}
                       />
-                      <span className="text-xs text-slate-600 dark:text-slate-400">
+                      <span className="text-xs text-muted-foreground">
                         {getDepartmentName(team.department)}
                       </span>
-                      <span className="text-xs text-slate-400">•</span>
+                      <span className="text-xs text-muted-foreground">•</span>
                       <div className="flex items-center gap-1">
-                        <Users className="w-3 h-3 text-slate-400" />
-                        <span className="text-xs text-slate-600 dark:text-slate-400">
+                        <Users className="w-3 h-3 text-muted-foreground" />
+                        <span className="text-xs text-muted-foreground">
                           {team.memberCount} members
                         </span>
                       </div>
@@ -108,7 +108,7 @@ export const TeamLeaderboard: React.FC<TeamLeaderboardProps> = ({ teams, limit }
 
                   {/* Growth rate badge */}
                   <div
-                    className={`flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/10`}
+                    className={`flex items-center gap-1 px-2.5 py-1 rounded-lg bg-success/10`}
                   >
                     <TrendingUp className={`w-3.5 h-3.5 ${getGrowthColor(team.growthRate)}`} />
                     <span className={`text-xs font-semibold ${getGrowthColor(team.growthRate)}`}>
@@ -119,32 +119,32 @@ export const TeamLeaderboard: React.FC<TeamLeaderboardProps> = ({ teams, limit }
 
                 {/* Metrics grid */}
                 <div className="grid grid-cols-3 gap-4 mb-3">
-                  <div className="text-center p-2 rounded-lg bg-slate-50 dark:bg-slate-800/30">
+                  <div className="text-center p-2 rounded-lg bg-muted/20">
                     <div className="flex items-center justify-center gap-1 mb-1">
-                      <Target className="w-3.5 h-3.5 text-indigo-500" />
-                      <span className="text-xs text-slate-500 dark:text-slate-400">Skills</span>
+                      <Target className="w-3.5 h-3.5 text-primary" />
+                      <span className="text-xs text-muted-foreground">Skills</span>
                     </div>
-                    <div className="text-lg font-bold text-slate-900 dark:text-white">
+                    <div className="text-lg font-bold text-foreground">
                       {team.totalSkillsAcquired}
                     </div>
                   </div>
 
-                  <div className="text-center p-2 rounded-lg bg-slate-50 dark:bg-slate-800/30">
+                  <div className="text-center p-2 rounded-lg bg-muted/20">
                     <div className="flex items-center justify-center gap-1 mb-1">
-                      <Zap className="w-3.5 h-3.5 text-cyan-500" />
-                      <span className="text-xs text-slate-500 dark:text-slate-400">Engagement</span>
+                      <Zap className="w-3.5 h-3.5 text-highlight" />
+                      <span className="text-xs text-muted-foreground">Engagement</span>
                     </div>
-                    <div className="text-lg font-bold text-slate-900 dark:text-white">
+                    <div className="text-lg font-bold text-foreground">
                       {team.averageEngagementRate.toFixed(1)}%
                     </div>
                   </div>
 
-                  <div className="text-center p-2 rounded-lg bg-slate-50 dark:bg-slate-800/30">
+                  <div className="text-center p-2 rounded-lg bg-muted/20">
                     <div className="flex items-center justify-center gap-1 mb-1">
-                      <Award className="w-3.5 h-3.5 text-amber-500" />
-                      <span className="text-xs text-slate-500 dark:text-slate-400">Strength</span>
+                      <Award className="w-3.5 h-3.5 text-warning" />
+                      <span className="text-xs text-muted-foreground">Strength</span>
                     </div>
-                    <div className="text-lg font-bold text-slate-900 dark:text-white">
+                    <div className="text-lg font-bold text-foreground">
                       {team.averageSkillStrength.toFixed(1)}
                     </div>
                   </div>
