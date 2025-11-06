@@ -105,15 +105,15 @@ export const DepartmentCharts: React.FC<DepartmentChartsProps> = ({ departments 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Bar Chart Card */}
-      <div className="bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-800/50 p-6">
+      <div className="bg-card backdrop-blur-sm rounded-2xl border border-border p-6">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
-            <BarChart3 className="w-5 h-5 text-indigo-500" />
+          <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
+            <BarChart3 className="w-5 h-5 text-primary" />
             Department Overview
           </h3>
           <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-slate-400" />
-            <span className="text-sm text-slate-500 dark:text-slate-400">
+            <Users className="w-4 h-4 text-muted-foreground" />
+            <span className="text-sm text-muted-foreground">
               {formatNumber(totalEmployees)} employees
             </span>
           </div>
@@ -141,20 +141,20 @@ export const DepartmentCharts: React.FC<DepartmentChartsProps> = ({ departments 
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: dept.color }}
                     />
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                    <span className="text-sm font-medium text-foreground">
                       {dept.departmentName}
                     </span>
-                    <span className="text-xs text-slate-400">
+                    <span className="text-xs text-muted-foreground">
                       ({dept.employeeCount})
                     </span>
                   </div>
-                  <span className="text-sm font-semibold text-slate-900 dark:text-white">
+                  <span className="text-sm font-semibold text-foreground">
                     {value.toFixed(1)}{viewConfig.unit === '%' ? '%' : ` ${viewConfig.unit}`}
                   </span>
                 </div>
                 
                 {/* Progress bar */}
-                <div className="relative h-3 bg-slate-100 dark:bg-slate-800/50 rounded-full overflow-hidden">
+                <div className="relative h-3 bg-muted/30 rounded-full overflow-hidden">
                   <div
                     className="absolute inset-y-0 left-0 rounded-full transition-all duration-500 group-hover:opacity-90"
                     style={{
@@ -170,9 +170,9 @@ export const DepartmentCharts: React.FC<DepartmentChartsProps> = ({ departments 
       </div>
 
       {/* Donut Chart Card */}
-      <div className="bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-800/50 p-6">
+      <div className="bg-card backdrop-blur-sm rounded-2xl border border-border p-6">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+          <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
             <PieChart className="w-5 h-5 text-cyan-500" />
             {viewConfig.title}
           </h3>
@@ -184,8 +184,8 @@ export const DepartmentCharts: React.FC<DepartmentChartsProps> = ({ departments 
             onClick={() => setActiveView('engagement')}
             className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
               activeView === 'engagement'
-                ? 'bg-indigo-500 text-white'
-                : 'bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
             }`}
           >
             Engagement
@@ -194,8 +194,8 @@ export const DepartmentCharts: React.FC<DepartmentChartsProps> = ({ departments 
             onClick={() => setActiveView('skills')}
             className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
               activeView === 'skills'
-                ? 'bg-cyan-500 text-white'
-                : 'bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-highlight text-primary-foreground'
+                : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
             }`}
           >
             Skills
@@ -204,8 +204,8 @@ export const DepartmentCharts: React.FC<DepartmentChartsProps> = ({ departments 
             onClick={() => setActiveView('gaps')}
             className={`flex-1 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
               activeView === 'gaps'
-                ? 'bg-amber-500 text-white'
-                : 'bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800'
+                ? 'bg-warning text-primary-foreground'
+                : 'bg-muted/30 text-muted-foreground hover:bg-muted/50'
             }`}
           >
             Gaps

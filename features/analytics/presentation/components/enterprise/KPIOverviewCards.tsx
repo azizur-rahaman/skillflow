@@ -65,7 +65,7 @@ export const KPIOverviewCards: React.FC<KPIOverviewCardsProps> = ({ kpis }) => {
       {kpis.map((kpi) => (
         <div
           key={kpi.id}
-          className="relative bg-white dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-800/50 p-6 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 group overflow-hidden"
+          className="relative bg-card backdrop-blur-sm rounded-2xl border border-border p-6 hover:border-accent transition-all duration-300 group overflow-hidden"
         >
           {/* Background gradient glow */}
           <div
@@ -91,10 +91,10 @@ export const KPIOverviewCards: React.FC<KPIOverviewCardsProps> = ({ kpis }) => {
               <div
                 className={`flex items-center gap-1 px-2.5 py-1 rounded-lg ${
                   kpi.trend === TrendDirection.Up
-                    ? 'bg-emerald-500/10 text-emerald-400'
+                    ? 'bg-success/10 text-success'
                     : kpi.trend === TrendDirection.Down
-                    ? 'bg-red-500/10 text-red-400'
-                    : 'bg-slate-500/10 text-slate-400'
+                    ? 'bg-danger/10 text-danger'
+                    : 'bg-muted/10 text-muted-foreground'
                 }`}
               >
                 {getTrendIcon(kpi.trend)}
@@ -105,13 +105,13 @@ export const KPIOverviewCards: React.FC<KPIOverviewCardsProps> = ({ kpis }) => {
             </div>
 
             {/* KPI Label */}
-            <h3 className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">
+            <h3 className="text-sm font-medium text-muted-foreground mb-2">
               {kpi.label}
             </h3>
 
             {/* KPI Value */}
             <div className="flex items-baseline gap-2 mb-3">
-              <span className="text-4xl font-bold text-slate-900 dark:text-white">
+              <span className="text-4xl font-bold text-foreground">
                 {formatKPIValue(kpi.value, kpi.unit)}
               </span>
               <span
@@ -123,17 +123,17 @@ export const KPIOverviewCards: React.FC<KPIOverviewCardsProps> = ({ kpis }) => {
             </div>
 
             {/* Description */}
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="text-xs text-muted-foreground leading-relaxed">
               {kpi.description}
             </p>
 
             {/* Previous value comparison */}
-            <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800/50">
+            <div className="mt-4 pt-4 border-t border-border">
               <div className="flex items-center justify-between text-xs">
-                <span className="text-slate-500 dark:text-slate-400">
+                <span className="text-muted-foreground">
                   Previous Period:
                 </span>
-                <span className="font-medium text-slate-600 dark:text-slate-300">
+                <span className="font-medium text-foreground/80">
                   {formatKPIValue(kpi.previousValue, kpi.unit)} {kpi.unit}
                 </span>
               </div>
