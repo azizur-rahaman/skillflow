@@ -35,20 +35,20 @@ const DashboardContent: React.FC = () => {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-slate-50 dark:bg-slate-950">
+      <div className="flex items-center justify-center min-h-screen bg-background">
         <div className="text-center">
-          <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-danger/20 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl">⚠️</span>
           </div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+          <h3 className="text-lg font-semibold text-foreground mb-2">
             Error Loading Analytics
           </h3>
-          <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+          <p className="text-sm text-muted-foreground mb-4">
             {error}
           </p>
           <button
             onClick={refreshData}
-            className="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors"
+            className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:brightness-110 transition-all"
           >
             Try Again
           </button>
@@ -58,19 +58,19 @@ const DashboardContent: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-white dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800/50 backdrop-blur-sm sticky top-0 z-30">
+      <div className="bg-card/50 border-b border-border backdrop-blur-sm sticky top-0 z-30">
         <div className="max-w-[1920px] mx-auto px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
+              <h1 className="text-3xl font-bold text-foreground mb-2 flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-highlight flex items-center justify-center">
                   <BarChart3 className="w-6 h-6 text-white" />
                 </div>
                 Enterprise Analytics Dashboard
               </h1>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-muted-foreground">
                 Monitor organizational skills, learning health, and team performance
               </p>
             </div>
@@ -78,28 +78,28 @@ const DashboardContent: React.FC = () => {
             {/* Quick stats */}
             <div className="hidden lg:flex items-center gap-6">
               <div className="text-right">
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-muted-foreground">
                   Total Employees
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">
+                <div className="text-2xl font-bold text-foreground">
                   {departments.reduce((sum, d) => sum + d.employeeCount, 0)}
                 </div>
               </div>
-              <div className="w-px h-12 bg-slate-200 dark:bg-slate-800" />
+              <div className="w-px h-12 bg-border" />
               <div className="text-right">
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-muted-foreground">
                   Active Teams
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">
+                <div className="text-2xl font-bold text-foreground">
                   {teamLeaderboard.length}
                 </div>
               </div>
-              <div className="w-px h-12 bg-slate-200 dark:bg-slate-800" />
+              <div className="w-px h-12 bg-border" />
               <div className="text-right">
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-muted-foreground">
                   Departments
                 </div>
-                <div className="text-2xl font-bold text-slate-900 dark:text-white">
+                <div className="text-2xl font-bold text-foreground">
                   {departments.length}
                 </div>
               </div>
@@ -125,11 +125,11 @@ const DashboardContent: React.FC = () => {
           <main className="flex-1 space-y-8">
             {/* Loading state */}
             {loading && (
-              <div className="fixed inset-0 bg-slate-900/10 dark:bg-slate-950/30 backdrop-blur-sm flex items-center justify-center z-50">
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-2xl">
+              <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
+                <div className="bg-card rounded-2xl p-8 shadow-2xl border border-border">
                   <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
-                    <span className="text-lg font-medium text-slate-900 dark:text-white">
+                    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+                    <span className="text-lg font-medium text-foreground">
                       Loading analytics...
                     </span>
                   </div>
@@ -140,8 +140,8 @@ const DashboardContent: React.FC = () => {
             {/* KPI Overview Cards */}
             <section>
               <div className="flex items-center gap-2 mb-6">
-                <TrendingUp className="w-5 h-5 text-indigo-500" />
-                <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                <TrendingUp className="w-5 h-5 text-primary" />
+                <h2 className="text-xl font-semibold text-foreground">
                   Key Performance Indicators
                 </h2>
               </div>
@@ -151,8 +151,8 @@ const DashboardContent: React.FC = () => {
             {/* Department Charts */}
             <section>
               <div className="flex items-center gap-2 mb-6">
-                <BarChart3 className="w-5 h-5 text-cyan-500" />
-                <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+                <BarChart3 className="w-5 h-5 text-highlight" />
+                <h2 className="text-xl font-semibold text-foreground">
                   Department Analytics
                 </h2>
               </div>
@@ -166,7 +166,7 @@ const DashboardContent: React.FC = () => {
 
             {/* Footer note */}
             <div className="text-center py-8">
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+              <p className="text-sm text-muted-foreground">
                 Data updated every 24 hours • Last updated: {new Date().toLocaleDateString()}
               </p>
             </div>
