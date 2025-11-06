@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Skill Graph Explorer Page
  * 
@@ -192,7 +193,7 @@ const GraphExplorerContent = () => {
                     Skill Strength: {filters.minStrength}% - {filters.maxStrength}%
                   </label>
                   <div className="flex gap-4">
-                    <input
+                    <input aria-label='range'
                       type="range"
                       min="0"
                       max="100"
@@ -202,7 +203,7 @@ const GraphExplorerContent = () => {
                       }
                       className="flex-1"
                     />
-                    <input
+                    <input aria-label='range'
                       type="range"
                       min="0"
                       max="100"

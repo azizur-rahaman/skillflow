@@ -77,7 +77,7 @@ export function CourseRecommendationWidget({
 
                       {/* Dismiss Button */}
                       {onDismiss && (
-                        <button
+                        <button aria-label='x'
                           onClick={() => onDismiss(course.id)}
                           className="flex-shrink-0 p-1 rounded-lg hover:bg-white/10 text-[#64748B] hover:text-[#F8FAFC] transition-colors duration-200"
                         >

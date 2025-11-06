@@ -14,10 +14,7 @@ import { ProficiencyLegend } from '@/features/analytics/presentation/components/
 import { TeamInsightsPanel } from '@/features/analytics/presentation/components/team-heatmap/TeamInsightsPanel';
 import {
   SkillCategory,
-  ProficiencyLevel,
-  VerificationStatus,
   getSkillCategoryLabel,
-  getProficiencyLabel,
 } from '@/features/analytics/types/team-skills-heatmap.types';
 import {
   Users,
@@ -27,7 +24,6 @@ import {
   Search,
   X,
   SlidersHorizontal,
-  FileText,
 } from 'lucide-react';
 
 /**
@@ -163,7 +159,7 @@ const TeamSkillsHeatmapContent = () => {
                 className="w-full pl-10 pr-10 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               />
               {searchQuery && (
-                <button
+                <button aria-label="Clear search"
                   onClick={() => handleSearch('')}
                   className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
                 >

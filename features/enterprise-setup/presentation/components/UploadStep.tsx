@@ -1,3 +1,4 @@
+'use client';
 import React, { useCallback, useState } from "react";
 import { useEnterpriseSetup } from "../../context";
 import { Button } from "@/components/ui/button";

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SystemStatusProvider } from "@/features/system-status";
+import { SystemStatusBanner } from "@/features/system-status";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SystemStatusProvider>
+          <SystemStatusBanner className="sticky top-0 z-50" />
+          {children}
+        </SystemStatusProvider>
       </body>
     </html>
   );

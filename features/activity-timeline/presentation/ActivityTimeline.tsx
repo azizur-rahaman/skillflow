@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef, useCallback } from "react";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";

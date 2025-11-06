@@ -45,8 +45,12 @@ function LessonDetailContent() {
       <div className="min-h-screen bg-[#0F172A] flex items-center justify-center">
         <div className="text-center">
           <BookOpen className="w-16 h-16 text-[#6366F1] mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-[#F8FAFC] mb-2">Lesson Not Found</h2>
-          <p className="text-[#94A3B8]">The lesson you're looking for doesn't exist</p>
+          <h2 className="text-2xl font-bold text-[#F8FAFC] mb-2">
+            Lesson Not Found
+          </h2>
+          <p className="text-[#94A3B8]">
+            The lesson you&apos;re looking for doesn&apos;t exist
+          </p>
         </div>
       </div>
     );
@@ -116,10 +120,10 @@ function LessonDetailContent() {
                   <span>{currentLesson.sections.length} sections</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <button className="text-[#94A3B8] hover:text-[#6366F1] transition-colors">
+                  <button aria-label='bookmark' className="text-[#94A3B8] hover:text-[#6366F1] transition-colors">
                     <Bookmark className="w-4 h-4" />
                   </button>
-                  <button className="text-[#94A3B8] hover:text-[#6366F1] transition-colors">
+                  <button aria-label='share' className="text-[#94A3B8] hover:text-[#6366F1] transition-colors">
                     <Share2 className="w-4 h-4" />
                   </button>
                 </div>

@@ -10,23 +10,14 @@
 import { useState } from 'react';
 import {
   TrendingUp,
-  TrendingDown,
-  Minus,
   Globe,
   DollarSign,
-  Briefcase,
   Sparkles,
-  Target,
-  AlertCircle,
-  Info,
   ChevronRight,
   BarChart3,
   Map,
-  Calendar,
   Brain,
-  Zap,
   ArrowUpRight,
-  ArrowDownRight,
 } from 'lucide-react';
 
 // Types
@@ -820,7 +811,7 @@ export default function ForecastAnalyticsPage() {
                     <p className="text-sm font-medium text-white">{forecast.skillName}</p>
                     <p className="text-xs text-slate-400">{forecast.trend}</p>
                   </div>
-                  <button
+                  <button aria-label='map'
                     onClick={(e) => {
                       e.preventDefault();
                       setSelectedMapSkill(forecast.skillId);

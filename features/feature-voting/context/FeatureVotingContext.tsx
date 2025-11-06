@@ -77,26 +77,28 @@ const mockFeatures: FeatureRequest[] = [
 
 const mockComments: FeatureComment[] = [
   {
-    id: "1",
-    featureId: "1",
-    authorId: "user4",
-    authorName: "Emma Davis",
-    content:
-      "This would be amazing! The current matching algorithm sometimes feels random.",
-    createdAt: new Date("2025-11-02"),
-    votes: 5,
-    isEdited: false,
+      id: "1",
+      featureId: "1",
+      authorId: "user4",
+      authorName: "Emma Davis",
+      content: "This would be amazing! The current matching algorithm sometimes feels random.",
+      createdAt: new Date("2025-11-02"),
+      votes: 5,
+      isEdited: false,
+      author: undefined,
+      hasVoted: false
   },
   {
-    id: "2",
-    featureId: "1",
-    authorId: "user5",
-    authorName: "David Kim",
-    content:
-      "Could we also include personality assessments in the matching process?",
-    createdAt: new Date("2025-11-03"),
-    votes: 3,
-    isEdited: false,
+      id: "2",
+      featureId: "1",
+      authorId: "user5",
+      authorName: "David Kim",
+      content: "Could we also include personality assessments in the matching process?",
+      createdAt: new Date("2025-11-03"),
+      votes: 3,
+      isEdited: false,
+      author: undefined,
+      hasVoted: false
   },
 ];
 
@@ -315,14 +317,16 @@ export const FeatureVotingProvider: React.FC<FeatureVotingProviderProps> = ({
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
         const newComment: FeatureComment = {
-          id: `comment_${Date.now()}`,
-          featureId,
-          authorId: "current_user",
-          authorName: "You",
-          content,
-          createdAt: new Date(),
-          votes: 0,
-          isEdited: false,
+            id: `comment_${Date.now()}`,
+            featureId,
+            authorId: "current_user",
+            authorName: "You",
+            content,
+            createdAt: new Date(),
+            votes: 0,
+            isEdited: false,
+            author: undefined,
+            hasVoted: false
         };
 
         dispatch({ type: "ADD_COMMENT", payload: newComment });
