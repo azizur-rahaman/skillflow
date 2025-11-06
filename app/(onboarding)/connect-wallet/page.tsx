@@ -18,7 +18,6 @@ import {
   WalletProvider, 
   ConnectionStatus as Status,
   ConnectionStep,
-  WalletProviderInfo,
 } from '@/features/wallet-connection/types/wallet-connection.types';
 
 /**
