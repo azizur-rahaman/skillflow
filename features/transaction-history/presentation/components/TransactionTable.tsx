@@ -18,6 +18,8 @@ import {
   getTransactionTypeColor,
   getTransactionTypeIcon,
 } from '../../types/transaction-history.types';
+
+// Import child components
 import { HashCopy } from './HashCopy';
 import { StatusBadge } from './StatusBadge';
 import { TokenIcon } from './TokenIcon';
