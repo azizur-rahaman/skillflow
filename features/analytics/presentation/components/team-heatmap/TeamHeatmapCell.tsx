@@ -156,7 +156,7 @@ export const TeamHeatmapCellComponent = ({
       {/* Hover tooltip */}
       {showTooltip && (
         <div
-          className="absolute z-50 w-72 p-4 bg-card border border-border rounded-xl shadow-2xl animate-fade-in"
+          className="absolute z-50 w-72 p-4 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl animate-fade-in"
           style={{
             top: '100%',
             left: '50%',
@@ -167,11 +167,11 @@ export const TeamHeatmapCellComponent = ({
           onMouseLeave={handleMouseLeave}
         >
           {/* Header */}
-          <div className="mb-3 pb-3 border-b border-border">
-            <h4 className="text-sm font-bold text-foreground mb-1">
+          <div className="mb-3 pb-3 border-b border-slate-700">
+            <h4 className="text-sm font-bold text-white mb-1">
               {cell.skillName}
             </h4>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-slate-400">
               {cell.teamMemberName}
             </p>
           </div>
@@ -179,7 +179,7 @@ export const TeamHeatmapCellComponent = ({
           {/* Proficiency details */}
           <div className="space-y-2 mb-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">Proficiency</span>
+              <span className="text-xs text-slate-400">Proficiency</span>
               <span
                 className="text-sm font-bold"
                 style={{ color: cell.color }}
@@ -189,7 +189,7 @@ export const TeamHeatmapCellComponent = ({
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">Verification</span>
+              <span className="text-xs text-slate-400">Verification</span>
               <div className="flex items-center gap-1">
                 <VerificationIcon className="w-3.5 h-3.5" style={{ color: verificationColor }} />
                 <span className="text-xs capitalize" style={{ color: verificationColor }}>
@@ -199,23 +199,23 @@ export const TeamHeatmapCellComponent = ({
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">Experience</span>
-              <span className="text-xs font-medium text-foreground">
+              <span className="text-xs text-slate-400">Experience</span>
+              <span className="text-xs font-medium text-white">
                 {cell.metadata.yearsExperience.toFixed(1)} years
               </span>
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">Projects Used</span>
-              <span className="text-xs font-medium text-foreground">
+              <span className="text-xs text-slate-400">Projects Used</span>
+              <span className="text-xs font-medium text-white">
                 {cell.metadata.projectsUsed}
               </span>
             </div>
 
             {cell.metadata.certificationsCount > 0 && (
               <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">Certifications</span>
-                <span className="text-xs font-medium text-primary">
+                <span className="text-xs text-slate-400">Certifications</span>
+                <span className="text-xs font-medium text-indigo-400">
                   {cell.metadata.certificationsCount} 🏆
                 </span>
               </div>
@@ -226,9 +226,9 @@ export const TeamHeatmapCellComponent = ({
           {cell.metadata.endorsements > 0 && (
             <div className="mb-3">
               <div className="flex items-center gap-1 mb-1">
-                <span className="text-xs text-muted-foreground">Endorsements</span>
-                <div className="px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20">
-                  <span className="text-xs font-bold text-primary">
+                <span className="text-xs text-slate-400">Endorsements</span>
+                <div className="px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">
+                  <span className="text-xs font-bold text-indigo-400">
                     {cell.metadata.endorsements}
                   </span>
                 </div>
@@ -238,17 +238,17 @@ export const TeamHeatmapCellComponent = ({
 
           {/* Manager vs Self Assessment */}
           {cell.metadata.managerAssessment && (
-            <div className="pt-3 border-t border-border">
+            <div className="pt-3 border-t border-slate-700">
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div>
-                  <p className="text-muted-foreground mb-1">Self</p>
-                  <p className="font-medium text-foreground">
+                  <p className="text-slate-400 mb-1">Self</p>
+                  <p className="font-medium text-white">
                     {cell.metadata.selfAssessment}%
                   </p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground mb-1">Manager</p>
-                  <p className="font-medium text-foreground flex items-center gap-1">
+                  <p className="text-slate-400 mb-1">Manager</p>
+                  <p className="font-medium text-white flex items-center gap-1">
                     {Math.round(cell.metadata.managerAssessment)}%
                     <TrendIcon
                       className={`w-3 h-3 ${
@@ -256,7 +256,7 @@ export const TeamHeatmapCellComponent = ({
                           ? 'text-emerald-400'
                           : trend === 'down'
                           ? 'text-red-400'
-                          : 'text-muted-foreground'
+                          : 'text-slate-400'
                       }`}
                     />
                   </p>
@@ -266,8 +266,8 @@ export const TeamHeatmapCellComponent = ({
           )}
 
           {/* Last updated */}
-          <div className="mt-3 pt-3 border-t border-border">
-            <p className="text-xs text-muted-foreground">
+          <div className="mt-3 pt-3 border-t border-slate-700">
+            <p className="text-xs text-slate-400">
               Last updated:{' '}
               {new Date(cell.metadata.lastUpdated).toLocaleDateString()}
             </p>

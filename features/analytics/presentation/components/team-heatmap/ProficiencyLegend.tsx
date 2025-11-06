@@ -26,8 +26,8 @@ export const ProficiencyLegend = ({
 
   if (orientation === 'horizontal') {
     return (
-      <div className="bg-card rounded-xl border border-border p-4">
-        <h3 className="text-sm font-semibold text-foreground mb-3">
+      <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-xl border border-slate-700 p-4">
+        <h3 className="text-sm font-semibold text-white mb-3">
           Proficiency Scale
         </h3>
 
@@ -71,11 +71,11 @@ export const ProficiencyLegend = ({
                 className="w-full h-2 rounded mb-1"
                 style={{ backgroundColor: level.color }}
               />
-              <p className="text-xs font-medium text-foreground">
+              <p className="text-xs font-medium text-white">
                 {level.label}
               </p>
               {!compact && (
-                <p className="text-xs text-muted-foreground">
+                <p className="text-xs text-slate-400">
                   {level.minValue}-{level.maxValue}%
                 </p>
               )}
@@ -88,13 +88,13 @@ export const ProficiencyLegend = ({
 
   // Vertical orientation (default)
   return (
-    <div className="bg-card rounded-xl border border-border p-5">
+    <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-xl border border-slate-700 p-5">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-semibold text-foreground">
+        <h3 className="text-sm font-semibold text-white">
           Proficiency Legend
         </h3>
-        <div className="px-2 py-1 rounded-md bg-primary/10 border border-primary/20">
-          <span className="text-xs font-medium text-primary">0-100%</span>
+        <div className="px-2 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20">
+          <span className="text-xs font-medium text-indigo-400">0-100%</span>
         </div>
       </div>
 
@@ -131,7 +131,7 @@ export const ProficiencyLegend = ({
         {legend.levels.map((level) => (
           <div
             key={level.level}
-            className="group hover:bg-muted/30 p-2 rounded-lg transition-colors cursor-default"
+            className="group hover:bg-slate-700/30 p-2 rounded-lg transition-colors cursor-default"
           >
             <div className="flex items-start gap-3">
               {/* Color indicator */}
@@ -148,16 +148,16 @@ export const ProficiencyLegend = ({
               {/* Level info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline justify-between mb-1">
-                  <h4 className="text-sm font-semibold text-foreground">
+                  <h4 className="text-sm font-semibold text-white">
                     {level.label}
                   </h4>
-                  <span className="text-xs font-medium text-muted-foreground">
+                  <span className="text-xs font-medium text-slate-400">
                     {level.minValue}-{level.maxValue}%
                   </span>
                 </div>
                 
                 {showDescriptions && !compact && (
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-slate-400 leading-relaxed">
                     {level.description}
                   </p>
                 )}
@@ -169,8 +169,8 @@ export const ProficiencyLegend = ({
 
       {/* Additional info */}
       {!compact && (
-        <div className="mt-5 pt-5 border-t border-border">
-          <div className="space-y-2 text-xs text-muted-foreground">
+        <div className="mt-5 pt-5 border-t border-slate-700">
+          <div className="space-y-2 text-xs text-slate-400">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
               <span>Verified skills have manager/peer confirmation</span>

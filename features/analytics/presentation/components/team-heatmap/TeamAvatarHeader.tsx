@@ -46,7 +46,7 @@ export const TeamAvatarHeader = ({
 
   return (
     <div
-      className="flex flex-col items-center py-4 px-2 transition-all hover:bg-card/50 rounded-t-xl group"
+      className="flex flex-col items-center py-4 px-2 transition-all hover:bg-slate-800/50 rounded-t-xl group"
       style={{ width: columnWidth }}
     >
       {/* Avatar */}
@@ -67,7 +67,7 @@ export const TeamAvatarHeader = ({
 
         {/* Role badge */}
         <div
-          className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full flex items-center justify-center border-2 border-background"
+          className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full flex items-center justify-center border-2 border-slate-900"
           style={{ backgroundColor: avgColor }}
         >
           <RoleIcon className="w-3.5 h-3.5 text-white" />
@@ -76,10 +76,10 @@ export const TeamAvatarHeader = ({
 
       {/* Name */}
       <div className="text-center mb-2">
-        <h3 className="text-sm font-semibold text-foreground truncate max-w-full px-1">
+        <h3 className="text-sm font-semibold text-white truncate max-w-full px-1">
           {member.name}
         </h3>
-        <p className="text-xs text-muted-foreground capitalize mt-0.5">
+        <p className="text-xs text-slate-400 capitalize mt-0.5">
           {member.role.replace('_', ' ')}
         </p>
       </div>
@@ -89,7 +89,7 @@ export const TeamAvatarHeader = ({
           {/* Average proficiency */}
           <div className="w-full mb-2">
             <div className="flex items-center justify-between mb-1 px-1">
-              <span className="text-xs text-muted-foreground">Avg</span>
+              <span className="text-xs text-slate-400">Avg</span>
               <span
                 className="text-xs font-bold"
                 style={{ color: avgColor }}
@@ -97,7 +97,7 @@ export const TeamAvatarHeader = ({
                 {member.averageProficiency}%
               </span>
             </div>
-            <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-slate-700/50 rounded-full overflow-hidden">
               <div
                 className="h-full rounded-full transition-all duration-500"
                 style={{
@@ -112,8 +112,8 @@ export const TeamAvatarHeader = ({
           {/* Skills count */}
           <div className="flex items-center gap-2 text-xs">
             <div className="flex items-center gap-1">
-              <div className="w-2 h-2 rounded-full bg-primary" />
-              <span className="text-muted-foreground">
+              <div className="w-2 h-2 rounded-full bg-indigo-400" />
+              <span className="text-slate-400">
                 {member.totalSkills} skills
               </span>
             </div>
@@ -121,8 +121,8 @@ export const TeamAvatarHeader = ({
 
           {/* Top skill badge */}
           {member.topSkills.length > 0 && (
-            <div className="mt-2 px-2 py-1 rounded-md bg-primary/10 border border-primary/20">
-              <p className="text-xs font-medium text-primary truncate max-w-full">
+            <div className="mt-2 px-2 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20">
+              <p className="text-xs font-medium text-indigo-400 truncate max-w-full">
                 ⭐ {member.topSkills[0].name}
               </p>
             </div>
@@ -151,19 +151,19 @@ export const TeamAvatarRow = ({
   showDetails = true,
 }: TeamAvatarRowProps) => {
   return (
-    <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-border">
+    <div className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
       <div className="flex items-start">
         {/* Empty space for row labels */}
         <div
-          className="flex-shrink-0 border-r border-border"
+          className="flex-shrink-0 border-r border-slate-700"
           style={{ width: rowLabelWidth }}
         >
           <div className="h-full flex items-end justify-end p-4">
             <div className="text-right">
-              <h3 className="text-sm font-bold text-foreground mb-1">
+              <h3 className="text-sm font-bold text-white mb-1">
                 Team Members →
               </h3>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-xs text-slate-400">
                 {members.length} members
               </p>
             </div>

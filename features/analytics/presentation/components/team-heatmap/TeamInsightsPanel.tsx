@@ -55,36 +55,36 @@ export const TeamInsightsPanel = ({
   return (
     <div className="space-y-6">
       {/* Team Overview Stats */}
-      <div className="bg-card rounded-xl border border-border p-5">
-        <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-          <Users className="w-5 h-5 text-primary" />
+      <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-xl border border-slate-700 p-5">
+        <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <Users className="w-5 h-5 text-indigo-400" />
           Team Overview
         </h3>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-background rounded-lg p-3">
-            <p className="text-xs text-muted-foreground mb-1">Team Size</p>
-            <p className="text-2xl font-bold text-foreground">
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <p className="text-xs text-slate-400 mb-1">Team Size</p>
+            <p className="text-2xl font-bold text-white">
               {statistics.totalMembers}
             </p>
           </div>
 
-          <div className="bg-background rounded-lg p-3">
-            <p className="text-xs text-muted-foreground mb-1">Total Skills</p>
-            <p className="text-2xl font-bold text-foreground">
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <p className="text-xs text-slate-400 mb-1">Total Skills</p>
+            <p className="text-2xl font-bold text-white">
               {statistics.totalSkills}
             </p>
           </div>
 
-          <div className="bg-background rounded-lg p-3">
-            <p className="text-xs text-muted-foreground mb-1">Avg Proficiency</p>
-            <p className="text-2xl font-bold text-primary">
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <p className="text-xs text-slate-400 mb-1">Avg Proficiency</p>
+            <p className="text-2xl font-bold text-indigo-400">
               {statistics.averageTeamProficiency}%
             </p>
           </div>
 
-          <div className="bg-background rounded-lg p-3">
-            <p className="text-xs text-muted-foreground mb-1">Skill Gaps</p>
+          <div className="bg-slate-800/50 rounded-lg p-3">
+            <p className="text-xs text-slate-400 mb-1">Skill Gaps</p>
             <p className="text-2xl font-bold text-red-400">
               {statistics.skillGapsCount}
             </p>
@@ -93,9 +93,9 @@ export const TeamInsightsPanel = ({
       </div>
 
       {/* Skill Gaps */}
-      <div className="bg-card rounded-xl border border-border p-5">
+      <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-xl border border-slate-700 p-5">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <AlertTriangle className="w-5 h-5 text-red-400" />
             Critical Skill Gaps
           </h3>
@@ -116,7 +116,7 @@ export const TeamInsightsPanel = ({
               <div className="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Award className="w-6 h-6 text-emerald-400" />
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-slate-400">
                 No critical skill gaps identified! 🎉
               </p>
             </div>
@@ -125,9 +125,9 @@ export const TeamInsightsPanel = ({
       </div>
 
       {/* Team Strengths */}
-      <div className="bg-card rounded-xl border border-border p-5">
+      <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 rounded-xl border border-slate-700 p-5">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+          <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <Zap className="w-5 h-5 text-emerald-400" />
             Core Competencies
           </h3>
@@ -145,7 +145,7 @@ export const TeamInsightsPanel = ({
             ))
           ) : (
             <div className="text-center py-8">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-slate-400">
                 No core competencies identified yet
               </p>
             </div>
@@ -154,9 +154,9 @@ export const TeamInsightsPanel = ({
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-gradient-to-br from-primary/10 to-highlight/10 rounded-xl border border-primary/20 p-5">
-        <h3 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
-          <Target className="w-4 h-4 text-primary" />
+      <div className="bg-gradient-to-br from-indigo-500/10 to-purple-600/10 rounded-xl border border-indigo-500/20 p-5">
+        <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
+          <Target className="w-4 h-4 text-indigo-400" />
           Recommended Actions
         </h3>
 

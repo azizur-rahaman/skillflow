@@ -31,12 +31,12 @@ export const TeamSkillsHeatmapGrid = ({
 
   if (!matrix) {
     return (
-      <div className="flex items-center justify-center h-96 bg-card/50 rounded-2xl border border-border">
+      <div className="flex items-center justify-center h-96 bg-slate-800/50 rounded-2xl border border-slate-700">
         <div className="text-center">
-          <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-3xl">📊</span>
           </div>
-          <p className="text-muted-foreground">No team data available</p>
+          <p className="text-slate-400">No team data available</p>
         </div>
       </div>
     );
@@ -140,7 +140,7 @@ export const TeamSkillsHeatmapGrid = ({
   }
 
   return (
-    <div className="relative bg-background rounded-2xl border border-border overflow-hidden">
+    <div className="relative bg-slate-800/30 rounded-2xl border border-slate-700 overflow-hidden">
       {/* Team avatar header row */}
       <TeamAvatarRow
         members={filteredMembers}
@@ -170,17 +170,17 @@ export const TeamSkillsHeatmapGrid = ({
               return (
                 <div
                   key={skill.id}
-                  className="flex items-center border-b border-border/50 hover:bg-card/30 transition-colors animate-domain-fade"
+                  className="flex items-center border-b border-slate-700/50 hover:bg-slate-800/30 transition-colors animate-domain-fade"
                   style={{ animationDelay: `${skillIndex * 30}ms` }}
                 >
                   {/* Skill label (row header) */}
                   <div
-                    className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-r border-border"
+                    className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-r border-slate-700"
                     style={{ width: rowLabelWidth }}
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-sm font-semibold text-foreground truncate">
+                        <h4 className="text-sm font-semibold text-white truncate">
                           {skill.name}
                         </h4>
                         {isStrength && (
@@ -198,16 +198,16 @@ export const TeamSkillsHeatmapGrid = ({
                           </div>
                         )}
                       </div>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-xs text-slate-400">
                         {getSkillCategoryLabel(skill.category)}
                       </p>
                     </div>
 
                     <div className="ml-3 text-right">
-                      <div className="text-xs font-bold text-foreground mb-0.5">
+                      <div className="text-xs font-bold text-white mb-0.5">
                         {avgProficiency}%
                       </div>
-                      <div className="text-xs text-muted-foreground">avg</div>
+                      <div className="text-xs text-slate-400">avg</div>
                     </div>
                   </div>
 
@@ -232,12 +232,12 @@ export const TeamSkillsHeatmapGrid = ({
           ) : (
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
-                <p className="text-muted-foreground mb-2">
+                <p className="text-slate-400 mb-2">
                   No skills match your filters
                 </p>
                 <button
                   onClick={actions.resetFilters}
-                  className="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                  className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors font-medium"
                 >
                   Reset filters
                 </button>
@@ -248,26 +248,26 @@ export const TeamSkillsHeatmapGrid = ({
       </div>
 
       {/* Summary footer */}
-      <div className="sticky bottom-0 bg-card/95 backdrop-blur-sm border-t border-border px-6 py-3">
+      <div className="sticky bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-700 px-6 py-3">
         <div className="flex items-center justify-between text-xs">
           <div className="flex items-center gap-6">
-            <span className="text-muted-foreground">
+            <span className="text-slate-400">
               Showing {filteredSkills.length} of {matrix.skills.length} skills
             </span>
-            <span className="text-muted-foreground">
+            <span className="text-slate-400">
               {filteredMembers.length} team members
             </span>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-muted-foreground">
+              <span className="text-slate-400">
                 {matrix.statistics.strengths.filter((s) => s.isCoreCopetency).length} strengths
               </span>
             </div>
             <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full bg-red-400" />
-              <span className="text-muted-foreground">
+              <span className="text-slate-400">
                 {matrix.statistics.gaps.length} gaps
               </span>
             </div>

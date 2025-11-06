@@ -69,19 +69,19 @@ const TeamSkillsHeatmapContent = () => {
     (filters.showStrengthsOnly ? 1 : 0);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-card/95 backdrop-blur-sm border-b border-border">
+      <div className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
         <div className="max-w-[1920px] mx-auto px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-foreground mb-2 flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-highlight flex items-center justify-center">
+              <h1 className="text-3xl font-bold text-white mb-2 flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
                   <Users className="w-6 h-6 text-white" />
                 </div>
                 Team Skills Heatmap
               </h1>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-slate-400">
                 Compare team skills to identify gaps and strengths • {matrix?.teamName || 'Loading...'}
               </p>
             </div>
@@ -93,8 +93,8 @@ const TeamSkillsHeatmapContent = () => {
                 className={`
                   flex items-center gap-2 px-4 py-2 rounded-xl border transition-all
                   ${showFilters 
-                    ? 'bg-primary text-white border-primary' 
-                    : 'bg-card text-foreground border-border hover:border-primary'
+                    ? 'bg-indigo-500 text-white border-indigo-700' 
+                    : 'bg-slate-800/50 text-white border-slate-700 hover:border-indigo-700'
                   }
                 `}
               >
@@ -112,36 +112,36 @@ const TeamSkillsHeatmapContent = () => {
               <button
                 onClick={() => actions.refreshData()}
                 disabled={isLoading}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-border bg-card hover:border-primary transition-all disabled:opacity-50"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-700 bg-slate-800/50 hover:border-indigo-700 transition-all disabled:opacity-50"
               >
                 <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
-                <span className="text-sm font-medium text-foreground">Refresh</span>
+                <span className="text-sm font-medium text-white">Refresh</span>
               </button>
 
               <div className="relative group">
-                <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-white hover:brightness-110 transition-all">
+                <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-500 text-white hover:brightness-110 transition-all">
                   <Download className="w-4 h-4" />
                   <span className="text-sm font-medium">Export</span>
                 </button>
 
                 {/* Export dropdown */}
-                <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                <div className="absolute right-0 top-full mt-2 w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                   <div className="p-2">
                     <button
                       onClick={() => handleExport('json')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm text-foreground"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-700/50 transition-colors text-sm text-white"
                     >
                       Export as JSON
                     </button>
                     <button
                       onClick={() => handleExport('csv')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm text-foreground"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-700/50 transition-colors text-sm text-white"
                     >
                       Export as CSV
                     </button>
                     <button
                       onClick={() => handleExport('png')}
-                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-muted transition-colors text-sm text-foreground"
+                      className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-700/50 transition-colors text-sm text-white"
                     >
                       Export as Image
                     </button>
@@ -154,18 +154,18 @@ const TeamSkillsHeatmapContent = () => {
           {/* Search bar */}
           <div className="mt-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search skills..."
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="w-full pl-10 pr-10 py-2.5 bg-background border border-border rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full pl-10 pr-10 py-2.5 bg-slate-800/50 border border-slate-700 rounded-xl text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
               />
               {searchQuery && (
                 <button
                   onClick={() => handleSearch('')}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -182,9 +182,9 @@ const TeamSkillsHeatmapContent = () => {
           {showFilters && (
             <aside className="w-80 flex-shrink-0 space-y-6 animate-fade-in">
               {/* View mode */}
-              <div className="bg-card rounded-xl border border-border p-5">
-                <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                  <SlidersHorizontal className="w-4 h-4 text-primary" />
+              <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700 rounded-xl p-5">
+                <h3 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                  <SlidersHorizontal className="w-4 h-4 text-indigo-400" />
                   View Mode
                 </h3>
 
@@ -193,8 +193,8 @@ const TeamSkillsHeatmapContent = () => {
                     onClick={() => actions.setViewMode('heatmap')}
                     className={`w-full px-3 py-2 rounded-lg text-left text-sm transition-all ${
                       viewMode === 'heatmap'
-                        ? 'bg-primary text-white'
-                        : 'bg-background text-foreground hover:bg-muted'
+                        ? 'bg-indigo-500 text-white'
+                        : 'bg-slate-800/50 text-slate-300 hover:bg-slate-800'
                     }`}
                   >
                     Heatmap View
@@ -203,8 +203,8 @@ const TeamSkillsHeatmapContent = () => {
                     onClick={() => actions.setViewMode('gaps')}
                     className={`w-full px-3 py-2 rounded-lg text-left text-sm transition-all ${
                       viewMode === 'gaps'
-                        ? 'bg-primary text-white'
-                        : 'bg-background text-foreground hover:bg-muted'
+                        ? 'bg-indigo-500 text-white'
+                        : 'bg-slate-800/50 text-slate-300 hover:bg-slate-800'
                     }`}
                   >
                     Skill Gaps Only
@@ -213,8 +213,8 @@ const TeamSkillsHeatmapContent = () => {
                     onClick={() => actions.setViewMode('comparison')}
                     className={`w-full px-3 py-2 rounded-lg text-left text-sm transition-all ${
                       viewMode === 'comparison'
-                        ? 'bg-primary text-white'
-                        : 'bg-background text-foreground hover:bg-muted'
+                        ? 'bg-indigo-500 text-white'
+                        : 'bg-slate-800/50 text-slate-300 hover:bg-slate-800'
                     }`}
                   >
                     Comparison View
@@ -223,15 +223,15 @@ const TeamSkillsHeatmapContent = () => {
               </div>
 
               {/* Category filters */}
-              <div className="bg-card rounded-xl border border-border p-5">
+              <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700 rounded-xl p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold text-foreground">
+                  <h3 className="text-sm font-semibold text-white">
                     Skill Categories
                   </h3>
                   {filters.categories.length > 0 && (
                     <button
                       onClick={() => actions.updateFilters({ categories: [] })}
-                      className="text-xs text-primary hover:text-primary/80 transition-colors"
+                      className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
                     >
                       Clear
                     </button>
@@ -248,9 +248,9 @@ const TeamSkillsHeatmapContent = () => {
                         type="checkbox"
                         checked={filters.categories.includes(category)}
                         onChange={() => handleCategoryToggle(category)}
-                        className="w-4 h-4 rounded border-border text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
+                        className="w-4 h-4 rounded border-slate-600 text-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-0"
                       />
-                      <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+                      <span className="text-sm text-slate-300 group-hover:text-indigo-400 transition-colors">
                         {getSkillCategoryLabel(category)}
                       </span>
                     </label>
@@ -259,8 +259,8 @@ const TeamSkillsHeatmapContent = () => {
               </div>
 
               {/* Quick filters */}
-              <div className="bg-card rounded-xl border border-border p-5">
-                <h3 className="text-sm font-semibold text-foreground mb-3">
+              <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700 rounded-xl p-5">
+                <h3 className="text-sm font-semibold text-white mb-3">
                   Quick Filters
                 </h3>
 
@@ -272,9 +272,9 @@ const TeamSkillsHeatmapContent = () => {
                       onChange={(e) =>
                         actions.updateFilters({ showGapsOnly: e.target.checked })
                       }
-                      className="w-4 h-4 rounded border-border text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
+                      className="w-4 h-4 rounded border-slate-600 text-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-0"
                     />
-                    <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+                    <span className="text-sm text-slate-300 group-hover:text-indigo-400 transition-colors">
                       Show gaps only
                     </span>
                   </label>
@@ -286,9 +286,9 @@ const TeamSkillsHeatmapContent = () => {
                       onChange={(e) =>
                         actions.updateFilters({ showStrengthsOnly: e.target.checked })
                       }
-                      className="w-4 h-4 rounded border-border text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
+                      className="w-4 h-4 rounded border-slate-600 text-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-0"
                     />
-                    <span className="text-sm text-foreground group-hover:text-primary transition-colors">
+                    <span className="text-sm text-slate-300 group-hover:text-indigo-400 transition-colors">
                       Show strengths only
                     </span>
                   </label>
@@ -333,11 +333,11 @@ const TeamSkillsHeatmapContent = () => {
 
       {/* Loading overlay */}
       {isLoading && (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-card rounded-2xl p-8 shadow-2xl border border-border">
+        <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-slate-800 rounded-2xl p-8 shadow-2xl border border-slate-700">
             <div className="flex items-center gap-4">
-              <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-              <span className="text-lg font-medium text-foreground">
+              <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+              <span className="text-lg font-medium text-white">
                 Loading team skills data...
               </span>
             </div>
