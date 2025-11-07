@@ -4,8 +4,8 @@
  */
 
 import React from "react";
-import { FeedbackProvider } from "../../../features/feedback/context";
-import { FeedbackForm } from "../../../features/feedback/presentation";
+import { FeedbackProvider } from "@/features/feedback/context";
+import { FeedbackForm } from "@/features/feedback/presentation";
 
 interface FeedbackPageProps {
   params: {
@@ -40,16 +40,18 @@ export default function FeedbackPage({
 
   return (
     <FeedbackProvider>
-      <FeedbackForm
-        type={type}
-        sessionId={sessionId}
-        courseId={courseId}
-        mentorId={mentorId}
-        mentorName={mentorName}
-        courseName={courseName}
-        onSubmit={handleSubmit}
-        onClose={handleClose}
-      />
+      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <FeedbackForm
+          type={type}
+          sessionId={sessionId}
+          courseId={courseId}
+          mentorId={mentorId}
+          mentorName={mentorName}
+          courseName={courseName}
+          onSubmit={handleSubmit}
+          onClose={handleClose}
+        />
+      </div>
     </FeedbackProvider>
   );
 }

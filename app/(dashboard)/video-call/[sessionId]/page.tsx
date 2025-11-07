@@ -4,8 +4,8 @@
  */
 
 import React from "react";
-import { VideoCallProvider } from "../../../features/video-call/context";
-import { VideoCall } from "../../../features/video-call/presentation";
+import { VideoCallProvider } from "@/features/video-call/context";
+import { VideoCall } from "@/features/video-call/presentation";
 
 interface VideoCallPageProps {
   params: {
@@ -36,13 +36,15 @@ export default function VideoCallPage({
 
   return (
     <VideoCallProvider>
-      <VideoCall
-        sessionId={sessionId}
-        mentorName={mentor}
-        menteeName={mentee}
-        sessionType={type}
-        onEndCall={handleEndCall}
-      />
+      <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <VideoCall
+          sessionId={sessionId}
+          mentorName={mentor}
+          menteeName={mentee}
+          sessionType={type}
+          onEndCall={handleEndCall}
+        />
+      </div>
     </VideoCallProvider>
   );
 }
