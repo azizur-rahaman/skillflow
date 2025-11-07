@@ -68,14 +68,12 @@ export const HeatmapCellComponent = ({
             : 'none',
         }}
       >
-        {/* Value label (visible on hover or for high values) */}
-        {(isHovered || cell.value >= 80) && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-xs font-bold text-white drop-shadow-lg">
-              {cell.value}
-            </span>
-          </div>
-        )}
+        {/* Value label */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-xs font-bold text-white drop-shadow-lg">
+            {cell.value}
+          </span>
+        </div>
       </div>
 
       {/* Hover tooltip */}
