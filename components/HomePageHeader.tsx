@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 
 interface NavItem {
@@ -66,9 +67,7 @@ export function HomePageHeader() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#6366F1] to-[#A855F7] flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
+            <Image src="/logo.svg" alt="SkillFlow Logo" width={120} height={40} />
           </Link>
 
           {/* Desktop Navigation */}
