@@ -66,6 +66,38 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Hide header on dashboard routes
+  const isDashboardRoute = pathname?.startsWith('/dashboard') || 
+                          pathname?.startsWith('/skills') ||
+                          pathname?.startsWith('/analytics') ||
+                          pathname?.startsWith('/forecast') ||
+                          pathname?.startsWith('/learning') ||
+                          pathname?.startsWith('/marketplace') ||
+                          pathname?.startsWith('/wallet') ||
+                          pathname?.startsWith('/mastery') ||
+                          pathname?.startsWith('/gamification') ||
+                          pathname?.startsWith('/mint') ||
+                          pathname?.startsWith('/talent-search') ||
+                          pathname?.startsWith('/candidate-profile') ||
+                          pathname?.startsWith('/experience') ||
+                          pathname?.startsWith('/assessments') ||
+                          pathname?.startsWith('/qa') ||
+                          pathname?.startsWith('/compliance') ||
+                          pathname?.startsWith('/rbac') ||
+                          pathname?.startsWith('/transactions') ||
+                          pathname?.startsWith('/docs') ||
+                          pathname?.startsWith('/profile') ||
+                          pathname?.startsWith('/settings') ||
+                          pathname?.startsWith('/platform-analytics') ||
+                          pathname?.startsWith('/reports') ||
+                          pathname?.startsWith('/learning-path') ||
+                          pathname?.startsWith('/credentials');
+
+  // Don't render header on dashboard routes
+  if (isDashboardRoute) {
+    return null;
+  }
+
   // Handle scroll detection
   React.useEffect(() => {
     const handleScroll = () => {
