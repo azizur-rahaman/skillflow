@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * Main Dashboard Page
  * 
@@ -89,7 +90,7 @@ function DashboardContent() {
                     </h1>
                   </div>
                   <p className="text-[#94A3B8]">
-                    Here's your skill performance overview
+                    Here&apos;s your skill performance overview
                   </p>
                 </div>
 
@@ -97,7 +98,10 @@ function DashboardContent() {
                   {/* Last Updated */}
                   <div className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-[#CBD5E1] text-sm">
                     <Clock className="w-4 h-4" />
-                    <span>Updated {new Date(state.user.lastLogin).toLocaleDateString()}</span>
+                    <span>
+                      Updated{" "}
+                      {new Date(state.user.lastLogin).toLocaleDateString()}
+                    </span>
                   </div>
 
                   {/* Refresh Button */}
@@ -106,7 +110,11 @@ function DashboardContent() {
                     disabled={state.isLoading}
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-[#F8FAFC] transition-all duration-200 disabled:opacity-50"
                   >
-                    <RefreshCw className={`w-4 h-4 ${state.isLoading ? 'animate-spin' : ''}`} />
+                    <RefreshCw
+                      className={`w-4 h-4 ${
+                        state.isLoading ? "animate-spin" : ""
+                      }`}
+                    />
                     <span className="hidden sm:inline">Refresh</span>
                   </button>
                 </div>
@@ -115,14 +123,17 @@ function DashboardContent() {
           </div>
 
           {/* KPI Metrics Grid */}
-          <div className="animate-slide-up" style={{ animationDelay: '100ms' }}>
+          <div className="animate-slide-up" style={{ animationDelay: "100ms" }}>
             <KPIGrid metrics={state.kpiMetrics} columns={4} size="medium" />
           </div>
 
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Left Column - Skill Summary */}
-            <div className="lg:col-span-1 animate-slide-up" style={{ animationDelay: '200ms' }}>
+            <div
+              className="lg:col-span-1 animate-slide-up"
+              style={{ animationDelay: "200ms" }}
+            >
               <SkillSummaryCard
                 summary={state.skillSummary}
                 topGrowth={state.skillGrowth}
@@ -131,7 +142,10 @@ function DashboardContent() {
             </div>
 
             {/* Middle Column - Forecast Teaser */}
-            <div className="lg:col-span-1 animate-slide-up" style={{ animationDelay: '300ms' }}>
+            <div
+              className="lg:col-span-1 animate-slide-up"
+              style={{ animationDelay: "300ms" }}
+            >
               <ForecastTeaserWidget
                 forecasts={state.forecastTeasers}
                 maxItems={3}
@@ -139,7 +153,10 @@ function DashboardContent() {
             </div>
 
             {/* Right Column - Course Recommendations */}
-            <div className="lg:col-span-1 animate-slide-up" style={{ animationDelay: '400ms' }}>
+            <div
+              className="lg:col-span-1 animate-slide-up"
+              style={{ animationDelay: "400ms" }}
+            >
               <CourseRecommendationWidget
                 recommendations={state.courseRecommendations}
                 onDismiss={actions.dismissRecommendation}
@@ -149,11 +166,13 @@ function DashboardContent() {
           </div>
 
           {/* Quick Actions Bar */}
-          <div className="animate-slide-up" style={{ animationDelay: '500ms' }}>
+          <div className="animate-slide-up" style={{ animationDelay: "500ms" }}>
             <div className="rounded-2xl bg-gradient-to-br from-[#1E293B] to-[#1E293B]/50 border border-white/10 backdrop-blur-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Sparkles className="w-5 h-5 text-[#22D3EE]" />
-                <h3 className="text-lg font-semibold text-[#F8FAFC]">Quick Actions</h3>
+                <h3 className="text-lg font-semibold text-[#F8FAFC]">
+                  Quick Actions
+                </h3>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -169,7 +188,7 @@ function DashboardContent() {
                   return (
                     <button
                       key={action.id}
-                      onClick={() => window.location.href = action.route}
+                      onClick={() => (window.location.href = action.route)}
                       className="group relative p-4 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-white/20 transition-all duration-300 text-left"
                       style={{ animationDelay: `${500 + index * 50}ms` }}
                     >
@@ -180,7 +199,10 @@ function DashboardContent() {
                             background: `linear-gradient(135deg, ${action.color}40, ${action.color}20)`,
                           }}
                         >
-                          <Icon className="w-5 h-5" style={{ color: action.color }} />
+                          <Icon
+                            className="w-5 h-5"
+                            style={{ color: action.color }}
+                          />
                         </div>
 
                         {action.badge && (
@@ -206,8 +228,18 @@ function DashboardContent() {
                       {/* Hover Arrow */}
                       <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                          <svg className="w-3 h-3 text-[#22D3EE]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          <svg
+                            className="w-3 h-3 text-[#22D3EE]"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
                           </svg>
                         </div>
                       </div>
@@ -219,11 +251,13 @@ function DashboardContent() {
           </div>
 
           {/* Recent Activity */}
-          <div className="animate-slide-up" style={{ animationDelay: '600ms' }}>
+          <div className="animate-slide-up" style={{ animationDelay: "600ms" }}>
             <div className="rounded-2xl bg-gradient-to-br from-[#1E293B] to-[#1E293B]/50 border border-white/10 backdrop-blur-sm p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Activity className="w-5 h-5 text-[#A855F7]" />
-                <h3 className="text-lg font-semibold text-[#F8FAFC]">Recent Activity</h3>
+                <h3 className="text-lg font-semibold text-[#F8FAFC]">
+                  Recent Activity
+                </h3>
               </div>
 
               <div className="space-y-3">
@@ -248,7 +282,10 @@ function DashboardContent() {
                           backgroundColor: `${activity.color}20`,
                         }}
                       >
-                        <Icon className="w-4 h-4" style={{ color: activity.color }} />
+                        <Icon
+                          className="w-4 h-4"
+                          style={{ color: activity.color }}
+                        />
                       </div>
 
                       <div className="flex-1 min-w-0">
@@ -271,7 +308,7 @@ function DashboardContent() {
           </div>
 
           {/* Learning Progress Banner */}
-          <div className="animate-slide-up" style={{ animationDelay: '700ms' }}>
+          <div className="animate-slide-up" style={{ animationDelay: "700ms" }}>
             <div className="rounded-2xl bg-gradient-to-r from-[#10B981]/20 via-[#6366F1]/20 to-[#A855F7]/20 border border-white/10 backdrop-blur-sm p-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -283,9 +320,12 @@ function DashboardContent() {
 
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#F8FAFC] mb-1">
-                    {state.learningProgress.completedCourses}/{state.learningProgress.totalCourses}
+                    {state.learningProgress.completedCourses}/
+                    {state.learningProgress.totalCourses}
                   </div>
-                  <div className="text-sm text-[#94A3B8]">Courses Completed</div>
+                  <div className="text-sm text-[#94A3B8]">
+                    Courses Completed
+                  </div>
                 </div>
 
                 <div className="text-center">

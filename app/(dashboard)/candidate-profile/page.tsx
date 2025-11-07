@@ -90,7 +90,7 @@ const CandidateProfileContent = () => {
             </div>
             
             <div className="space-y-4">
-              {profile.workExperience.map((exp, index) => (
+              {profile.workExperience.map((exp) => (
                 <div
                   key={exp.id}
                   className="relative pl-8 pb-8 border-l-2 border-slate-700 last:border-transparent last:pb-0"

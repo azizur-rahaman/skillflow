@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -244,7 +245,7 @@ export default function ExperienceModal() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-white/80 mb-2">Employment Type</label>
-                  <select
+                  <select aria-label='job'
                     value={(formData as ExperienceFormData).employmentType}
                     onChange={(e) => setFormData({ ...formData, employmentType: e.target.value as any })}
                     className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -258,7 +259,7 @@ export default function ExperienceModal() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-white/80 mb-2">Type</label>
-                  <select
+                  <select aria-label='work'
                     value={(formData as ExperienceFormData).type}
                     onChange={(e) => setFormData({ ...formData, type: e.target.value as any })}
                     className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -312,7 +313,7 @@ export default function ExperienceModal() {
 
               <div>
                 <label className="block text-sm font-medium text-white/80 mb-2">Status</label>
-                <select
+                <select aria-label='project status'
                   value={(formData as ProjectFormData).status}
                   onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
                   className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -341,7 +342,7 @@ export default function ExperienceModal() {
             </div>
             <div>
               <label className="block text-sm font-medium text-white/80 mb-2">End Date</label>
-              <input
+              <input area-label='end date'
                 type="date"
                 disabled={formData.isCurrent}
                 value={formData.isCurrent ? '' : formData.endDate}
@@ -410,7 +411,7 @@ export default function ExperienceModal() {
                 className="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="Add a skill"
               />
-              <button
+              <button aria-label='add skill'
                 type="button"
                 onClick={addSkill}
                 className="px-4 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white transition-colors"
@@ -531,7 +532,7 @@ function DynamicList({ label, items, onUpdate }: { label: string; items: string[
               className="flex-1 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               placeholder={`Add ${label.toLowerCase().slice(0, -1)}`}
             />
-            <button
+            <button aria-label='remove'
               type="button"
               onClick={() => removeItem(i)}
               className="p-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 transition-colors"

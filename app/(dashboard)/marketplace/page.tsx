@@ -77,14 +77,18 @@ const MarketplaceContent: React.FC = () => {
             {cart.length > 0 && (
               <div className="flex items-center gap-4 px-6 py-3 rounded-xl bg-indigo-500/10 border border-indigo-500/30">
                 <div>
-                  <div className="text-sm text-indigo-400 font-medium">Cart</div>
+                  <div className="text-sm text-indigo-400 font-medium">
+                    Cart
+                  </div>
                   <div className="text-lg font-bold text-white">
-                    {cart.length} {cart.length === 1 ? 'item' : 'items'}
+                    {cart.length} {cart.length === 1 ? "item" : "items"}
                   </div>
                 </div>
                 <div className="h-10 w-px bg-indigo-500/30" />
                 <div>
-                  <div className="text-sm text-indigo-400 font-medium">Total</div>
+                  <div className="text-sm text-indigo-400 font-medium">
+                    Total
+                  </div>
                   <div className="text-lg font-bold text-white">
                     {totalCartValue.toFixed(2)} FLOW
                   </div>
@@ -112,9 +116,13 @@ const MarketplaceContent: React.FC = () => {
                 <div className="p-2 rounded-lg bg-indigo-500/20 border border-indigo-500/30">
                   <ShoppingBag className="w-5 h-5 text-indigo-400" />
                 </div>
-                <span className="text-sm font-medium text-slate-400">Active Listings</span>
+                <span className="text-sm font-medium text-slate-400">
+                  Active Listings
+                </span>
               </div>
-              <div className="text-2xl font-bold text-white">{formatNumber(summary.activeListings)}</div>
+              <div className="text-2xl font-bold text-white">
+                {formatNumber(summary.activeListings)}
+              </div>
             </div>
 
             <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-800/50 p-5">
@@ -122,9 +130,13 @@ const MarketplaceContent: React.FC = () => {
                 <div className="p-2 rounded-lg bg-purple-500/20 border border-purple-500/30">
                   <TrendingUp className="w-5 h-5 text-purple-400" />
                 </div>
-                <span className="text-sm font-medium text-slate-400">Total Volume</span>
+                <span className="text-sm font-medium text-slate-400">
+                  Total Volume
+                </span>
               </div>
-              <div className="text-2xl font-bold text-white">{formatUSDPrice(summary.totalVolumeUSD)}</div>
+              <div className="text-2xl font-bold text-white">
+                {formatUSDPrice(summary.totalVolumeUSD)}
+              </div>
             </div>
 
             <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-800/50 p-5">
@@ -132,9 +144,13 @@ const MarketplaceContent: React.FC = () => {
                 <div className="p-2 rounded-lg bg-cyan-500/20 border border-cyan-500/30">
                   <span className="text-lg">💰</span>
                 </div>
-                <span className="text-sm font-medium text-slate-400">Average Price</span>
+                <span className="text-sm font-medium text-slate-400">
+                  Average Price
+                </span>
               </div>
-              <div className="text-2xl font-bold text-white">{summary.averagePrice.toFixed(0)} FLOW</div>
+              <div className="text-2xl font-bold text-white">
+                {summary.averagePrice.toFixed(0)} FLOW
+              </div>
             </div>
 
             <div className="bg-slate-900/50 backdrop-blur-sm rounded-xl border border-slate-800/50 p-5">
@@ -142,9 +158,13 @@ const MarketplaceContent: React.FC = () => {
                 <div className="p-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30">
                   <span className="text-lg">🎓</span>
                 </div>
-                <span className="text-sm font-medium text-slate-400">Total Listings</span>
+                <span className="text-sm font-medium text-slate-400">
+                  Total Listings
+                </span>
               </div>
-              <div className="text-2xl font-bold text-white">{formatNumber(summary.totalListings)}</div>
+              <div className="text-2xl font-bold text-white">
+                {formatNumber(summary.totalListings)}
+              </div>
             </div>
           </div>
         )}
@@ -177,7 +197,9 @@ const MarketplaceContent: React.FC = () => {
 
             {/* Sort Dropdown */}
             <div className="flex-shrink-0">
-              <div className="text-sm font-medium text-slate-400 mb-3">Sort by</div>
+              <div className="text-sm font-medium text-slate-400 mb-3">
+                Sort by
+              </div>
               <SortDropdown value={sortOption} onChange={updateSort} />
             </div>
           </div>
@@ -193,9 +215,16 @@ const MarketplaceContent: React.FC = () => {
         {/* Results Count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-sm text-slate-400">
-            Showing <span className="font-semibold text-white">{listings.length}</span> skill{listings.length !== 1 ? 's' : ''}
+            Showing{" "}
+            <span className="font-semibold text-white">{listings.length}</span>{" "}
+            skill{listings.length !== 1 ? "s" : ""}
             {filter.searchQuery && (
-              <span> matching "<span className="text-indigo-400">{filter.searchQuery}</span>"</span>
+              <span>
+                {" "}
+                matching &quot;
+                <span className="text-indigo-400">{filter.searchQuery}</span>
+                &quot;
+              </span>
             )}
           </p>
         </div>
@@ -216,7 +245,7 @@ const MarketplaceContent: React.FC = () => {
                 key={listing.id}
                 listing={listing}
                 onCardClick={(listing) => {
-                  console.log('Card clicked:', listing);
+                  console.log("Card clicked:", listing);
                 }}
                 onAddToCart={addToCart}
                 onBuyNow={buyNow}
@@ -229,7 +258,9 @@ const MarketplaceContent: React.FC = () => {
             <div className="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-full bg-slate-800/50 border border-slate-700/50">
               <ShoppingBag className="w-10 h-10 text-slate-500" />
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">No skills found</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">
+              No skills found
+            </h3>
             <p className="text-slate-400 mb-6">
               Try adjusting your filters or search query
             </p>

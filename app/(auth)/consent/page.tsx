@@ -50,8 +50,18 @@ function ConsentScreenContent() {
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full">
           <defs>
-            <pattern id="consent-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
+            <pattern
+              id="consent-grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#consent-grid)" />
@@ -65,14 +75,17 @@ function ConsentScreenContent() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/20 rounded-full mb-6">
               <div className="w-2 h-2 bg-[#22D3EE] rounded-full animate-pulse" />
-              <span className="text-white/70 text-sm font-medium">Privacy & Data Control</span>
+              <span className="text-white/70 text-sm font-medium">
+                Privacy & Data Control
+              </span>
             </div>
-            
+
             <h1 className="text-4xl font-bold text-white mb-4">
               Your Data, Your Control
             </h1>
             <p className="text-white/60 text-lg max-w-2xl mx-auto mb-2">
-              We believe in transparency. Review and customize how we use your data to provide the best SkillFlow experience.
+              We believe in transparency. Review and customize how we use your
+              data to provide the best SkillFlow experience.
             </p>
             <p className="text-white/50 text-sm">
               You can change these preferences anytime in Settings.
@@ -193,7 +206,9 @@ function ConsentScreenContent() {
                   group
                 "
               >
-                <span className="text-white/80 text-sm">Data Processing Agreement</span>
+                <span className="text-white/80 text-sm">
+                  Data Processing Agreement
+                </span>
                 <ExternalLink className="w-4 h-4 text-white/40 group-hover:text-[#22D3EE] transition-colors" />
               </a>
             </div>
@@ -220,8 +235,8 @@ function ConsentScreenContent() {
             <div className="flex items-center gap-4">
               {/* Permission Summary */}
               <div className="text-sm text-white/50">
-                {state.permissions.filter((p) => p.status === 'granted').length} of{' '}
-                {state.permissions.length} permissions granted
+                {state.permissions.filter((p) => p.status === "granted").length}{" "}
+                of {state.permissions.length} permissions granted
               </div>
 
               {/* Save Button */}
@@ -235,8 +250,8 @@ function ConsentScreenContent() {
                   transition-all duration-200
                   ${
                     allRequiredGranted && !isSaving
-                      ? 'bg-gradient-to-r from-[#4F46E5] via-[#A855F7] to-[#22D3EE] text-white shadow-lg shadow-[#4F46E5]/30 hover:opacity-90'
-                      : 'bg-white/10 text-white/40 cursor-not-allowed'
+                      ? "bg-gradient-to-r from-[#4F46E5] via-[#A855F7] to-[#22D3EE] text-white shadow-lg shadow-[#4F46E5]/30 hover:opacity-90"
+                      : "bg-white/10 text-white/40 cursor-not-allowed"
                   }
                 `}
               >
@@ -257,7 +272,8 @@ function ConsentScreenContent() {
 
           {/* Footer Note */}
           <p className="text-center text-white/40 text-xs mt-8">
-            By continuing, you agree to our Terms of Service and acknowledge that you've read our Privacy Policy.
+            By continuing, you agree to our Terms of Service and acknowledge
+            that you&apos;ve read our Privacy Policy.
             <br />
             Last updated: November 5, 2025
           </p>

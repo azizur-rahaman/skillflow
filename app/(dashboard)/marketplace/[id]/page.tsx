@@ -94,12 +94,15 @@ const SkillDetailContent: React.FC = () => {
             <span className="text-3xl">🔍</span>
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-white mb-2">Skill Not Found</h2>
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Skill Not Found
+            </h2>
             <p className="text-slate-400 mb-4">
-              The skill you're looking for doesn't exist or has been removed.
+              The skill you&apos;re looking for doesn&apos;t exist or has been
+              removed.
             </p>
             <button
-              onClick={() => router.push('/marketplace')}
+              onClick={() => router.push("/marketplace")}
               className="px-6 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition-colors"
             >
               Browse Marketplace
