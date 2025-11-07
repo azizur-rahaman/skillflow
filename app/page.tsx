@@ -1,5 +1,5 @@
-import SplashScreen from '@/components/SplashScreen';
+import HomePage from '@/components/HomePage';
 
 export default function Home() {
-  return <SplashScreen />;
+  return <HomePage />;
 }
