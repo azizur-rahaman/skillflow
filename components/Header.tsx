@@ -66,6 +66,16 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
+  // Handle scroll detection
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Hide header on dashboard routes
   const isDashboardRoute = pathname?.startsWith('/dashboard') || 
                           pathname?.startsWith('/skills') ||
@@ -97,16 +107,6 @@ export function Header() {
   if (isDashboardRoute) {
     return null;
   }
-
-  // Handle scroll detection
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const isActive = (href: string) => {
     if (href === '/') {
