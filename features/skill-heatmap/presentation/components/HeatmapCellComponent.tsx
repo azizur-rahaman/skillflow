@@ -46,7 +46,7 @@ export const HeatmapCellComponent = ({
 
   return (
     <div
-      className="relative group"
+      className={`relative group ${isHovered ? 'z-50' : ''}`}
       style={{ width: size, height: size }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -80,7 +80,7 @@ export const HeatmapCellComponent = ({
 
       {/* Hover tooltip */}
       {isHovered && (
-        <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 z-50 animate-tooltip-appear pointer-events-none">
+        <div className="absolute left-1/2 bottom-full mb-2 -translate-x-1/2 z-50 animate-tooltip-appear pointer-events-none">
           <CellTooltip cell={cell} />
         </div>
       )}
