@@ -13,6 +13,7 @@ import {
   Zap,
   CheckCircle,
 } from 'lucide-react';
+import { HomePageHeader } from './HomePageHeader';
 
 export default function HomePage() {
   const router = useRouter();
@@ -71,6 +72,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0A0E27] via-[#0F172A] to-[#1E1B4B] relative overflow-hidden">
+      {/* HomePage Header - Transparent */}
+      <HomePageHeader />
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#6366F1]/20 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 animate-pulse" />
