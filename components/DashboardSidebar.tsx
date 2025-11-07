@@ -9,6 +9,7 @@
 
 import React, { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 import {
   LayoutDashboard,
   Dna,
@@ -207,12 +208,25 @@ export function DashboardSidebar() {
     >
       {/* Header */}
       <div className="h-16 flex items-center justify-between px-4 border-b border-white/10 flex-shrink-0">
-        {!collapsed && (
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-[#6366F1] to-[#A855F7] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-[#F8FAFC]">SkillFlow</span>
+        {!collapsed ? (
+          <div className="flex items-center gap-2 flex-1">
+            <Image 
+              src="/logo.svg" 
+              alt="SkillFlow Logo" 
+              width={120} 
+              height={40}
+              className="h-10 w-auto"
+            />
+          </div>
+        ) : (
+          <div className="flex items-center justify-center mx-auto">
+            <Image 
+              src="/logo.svg" 
+              alt="SkillFlow Logo" 
+              width={32} 
+              height={32}
+              className="w-8 h-8"
+            />
           </div>
         )}
         <button
