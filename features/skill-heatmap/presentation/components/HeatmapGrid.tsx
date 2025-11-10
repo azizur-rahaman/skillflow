@@ -1,15 +1,7 @@
-/**
- * Heatmap Grid Component
- * 
- * Main matrix visualization with dynamic color intensity, 
- * row/column headers, and responsive layout.
- */
-
 'use client';
 
 import { HeatmapCellComponent } from './HeatmapCellComponent';
 import { useHeatmap } from '../../context/HeatmapContext';
-import { HeatmapCell } from '../../types/heatmap.types';
 
 interface HeatmapGridProps {
   cellSize?: number;
